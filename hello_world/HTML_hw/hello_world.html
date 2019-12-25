@@ -1,0 +1,58 @@
+<!--    STEP 2: Add the !Doctype info.
+        Taken from the page source of google view-source:https://www.google.com/
+
+        alternative from W3C: 
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+
+        See https://www.w3.org/TR/html401/struct/global.html for more options and information
+
+        TODO: lang="a_language" is hardcoded for now. Need to detect when thinking about localisatoin
+-->
+<!--    STEP 5: Validate your work here https://validator.w3.org/nu/#textarea -->
+<!doctype html>
+<!--    STEP 3: Add html and head elements-->
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="en-GB">
+
+<head>
+    <!--    STEP 3: Let us give this page a title! it will appear in the tab in your browser.
+
+            Using https://www.w3schools.com/html/html_head.asp for reference
+
+            TODO: Add styles either via an in-line or .css sheet
+    -->
+    <title>My Portfolio</title>
+    <!--    STEP 3: the meta tag-->
+    <meta charset="UTF-8">
+    <meta name="description" content="Online portfolio building for CS CV/Resume">
+    <meta name="keywords" content="coding, design, resume, résumé, free">
+    <meta name="author" content="Barry Foye">
+    <!--    STEP 3: Set the viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    STEP 3: Add font stye-->
+    <style>
+        h1 {
+            font-family: "courier new", courier, arial, helvetica;
+        }
+
+        p {
+            font-family: "courier new", courier, arial, helvetica;
+        }
+    </style>
+
+</head>
+<!--    STEP 1: add text to show our web page is working 
+        Hello World
+-->
+<!--    STEP 4: Add the body element-->
+
+<body>
+    <!--    STEP 4: Lets give the page a title and an introductory paragraph -->
+    <h1>Hello World</h1>
+    <p>This initial Hello World page is part of a tutorial to help you build and online portfolio of your work.</p>
+    <br>
+    <p>It is intended that the tutorial can be used to teach yourself some of the basic computer science concepts from
+        scratch.</p>
+</body>
+
+</html>
