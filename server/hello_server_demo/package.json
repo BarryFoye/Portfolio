@@ -1,0 +1,21 @@
+{
+  "name": "hello_server",
+  "version": "0.0.1",
+  "description": "This is a webapp starter, which contains a node backend and a standard HTML, CSS and JS frontend",
+  "main": "set_up_node_server.js",
+  "dependencies": {
+    "chalk": "^3.0.0"
+  },
+  "devDependencies": {
+    "express": "~4.17.1",
+    "cors": "~2.8.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "beginners"
+  ],
+  "author": "Barry Foye",
+  "license": "ISC"
+}

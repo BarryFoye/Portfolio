@@ -1,0 +1,27 @@
+{
+    "directories": [
+        {
+            "name": "hello"
+        },
+        {
+            "name": "hello/server/"
+        },
+        {
+            "name": "hello/public/"
+        },
+        {
+            "name": "hello/data/"
+        }
+    ],
+    "server_files": "server_app.js",
+    "templates": [
+        "JS",
+        "HTML",
+        "CSS"
+    ],
+    "public_folder_filepaths": [
+        "index.js",
+        "index.html",
+        "layout.css"
+    ]
+}
