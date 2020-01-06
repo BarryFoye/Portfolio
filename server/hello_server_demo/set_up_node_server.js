@@ -40,3 +40,11 @@ fs.unlink('SERVER', (err) => {
     if (err) console.log(err);
     console.log("Deleting -> SERVER");
 });
+fs.unlink('config.json', (err) => {
+    if (err) console.log(err);
+    console.log("Deleting -> config.json");
+});
+fs.unlink('set_up_node_server.js', (err) => {
+    if (err) console.log(err);
+    console.log("Deleting -> set_up_node_server.js");
+});
