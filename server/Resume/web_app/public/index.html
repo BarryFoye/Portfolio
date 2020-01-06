@@ -10,6 +10,8 @@
     <meta name="author" content="Barry Foye">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="layout.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.min.js"></script>
+    <script src="sketch.js"></script>
     <script src="index.js"></script>
 </head>
 
@@ -25,7 +27,7 @@
         </div>
         <div class="blank">
         </div>
-        <div class="left_content">
+        <div class="left_content" id="left_content">
             <button type="button" onclick="updateTitle(document.getElementById('tb_new_title').value)">Click to Update
                 title</button>
             <button type="button" onclick="typeTitle()">Click to Start the cursor typing
