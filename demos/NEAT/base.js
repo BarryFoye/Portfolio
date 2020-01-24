@@ -21,7 +21,7 @@ function initialise() {
         { "solution": "10001010100100101011", "fitness": 0 }
     ];
     newPopulation = [];
-    fittest = { "solution": "1100101010", "fitness": 0 };
+    fittest = { "solution": "10001010101100101010", "fitness": 0 };
 }
 initialise();
 
