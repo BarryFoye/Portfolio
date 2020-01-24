@@ -3,22 +3,25 @@
 
 let oldPopulation;
 let newPopulation;
-const optimum = "111111101010"
+const optimum = "01010101011010101010"
+let fittest;
+let candidates;
 
 function initialise() {
     oldPopulation = [
-        { "solution": "1100101010", "fitness": 0 },
-        { "solution": "1000101010", "fitness": 0 },
-        { "solution": "1100111010", "fitness": 0 },
-        { "solution": "1100101011", "fitness": 0 },
-        { "solution": "1100011010", "fitness": 0 },
-        { "solution": "1010101010", "fitness": 0 },
-        { "solution": "1111100000", "fitness": 0 },
-        { "solution": "0000011111", "fitness": 0 },
-        { "solution": "0011101010", "fitness": 0 },
-        { "solution": "0100101011", "fitness": 0 }
+        { "solution": "10001010101100101010", "fitness": 0 },
+        { "solution": "10001010100011100011", "fitness": 0 },
+        { "solution": "11001110101100101010", "fitness": 0 },
+        { "solution": "10001010101100101011", "fitness": 0 },
+        { "solution": "11000110101100101010", "fitness": 0 },
+        { "solution": "10001010101010101010", "fitness": 0 },
+        { "solution": "11111000001100101010", "fitness": 0 },
+        { "solution": "10001010100000011111", "fitness": 0 },
+        { "solution": "00111010101100101010", "fitness": 0 },
+        { "solution": "10001010100100101011", "fitness": 0 }
     ];
     newPopulation = [];
+    fittest = { "solution": "1100101010", "fitness": 0 };
 }
 initialise();
 
@@ -28,8 +31,8 @@ function selection() {
         oldPopulation[i].fitness = evaluate(oldPopulation[i]);
     }
 }
-selection();
-let candidates = selectPop(oldPopulation, 6);
+
+
 function crossOver() {
     let parent_a = "";
     let parent_b = "";
@@ -57,17 +60,49 @@ function crossOver() {
     newPop.push(candidates[candidates.length - 1]);
     return newPop;
 }
-newPopulation = crossOver();
-console.log("**************oldPopulation**************");
-console.log(oldPopulation);
-console.log();
-console.log("**************newPopulation**************");
-console.log(newPopulation);
-function mutate() {
 
+function mutate() {
+    let randomChance = 0; 
+    for(let i = 0; i < newPopulation.length; i++){
+        randomChance = Math.random();
+        if(randomChance < 0.2){
+            let split = newPopulation[i].solution.split('');
+            let index = getRandomInt(0, split.length);
+            if(split[index] === '0'){
+                split[index] = '1';
+            } else {
+                split[index] = '0';
+            }
+            newPopulation[i].solution = split.join('');
+        }
+    }
 }
 
-function terminate() {
+
+function terminate(iteration) {
+    let local_fittest = oldPopulation[0];    
+    for(let i = 1; i < oldPopulation; i++){
+        if(local_fittest.fitness < oldPopulation[i].fitness){
+            local_fittest = oldPopulation[i];
+        }
+    }
+    if(local_fittest.fitness > fittest.fitness){
+        fittest = local_fittest;
+        if(fittest.solution === optimum){
+            console.log(iteration)
+            console.log(fittest);
+            console.log("stop");
+    
+        }
+    }
+    // if(fittest.solution === optimum){
+    //     console.log(fittest);
+    //     console.log("stop");
+
+    // }
+    oldPopulation = newPopulation;
+    newPopulation = [];
+
 
 }
 
@@ -86,7 +121,7 @@ function selectPop(pop, offspring) {
     for (let i = 0; i < pop.length; i++) {
         sum_pop_fitness += pop[i].fitness;
     }
-    let distance_between_pointers = Math.floor(sum_pop_fitness / num_offspring);
+    // From the aboe resource, now not used: let distance_between_pointers = Math.floor(sum_pop_fitness / num_offspring);
     // From the aboe resource, now not used: let start = getRandomInt(0, distance_between_pointers);
     let pointers = [];
     for (let i = 0; i < num_offspring; i++) {
@@ -118,3 +153,13 @@ function getRandomInt(min, max) {
 }
 
 
+for(let i = 0; i < 150; i++){
+    selection();
+    candidates = selectPop(oldPopulation, 6);
+    newPopulation = crossOver();
+    mutate();
+    terminate(i);
+}
+console.log(optimum);
+console.log(fittest);
+console.log("finished");
