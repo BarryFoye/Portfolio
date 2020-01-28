@@ -1,14 +1,14 @@
 const id = require("./id.js");
 
-class NodeGene{
+class NodeGene {
     id;
     node_type;
-    innovation;
-    constructor(node_type, innovation){
+    node_innovation;
+    constructor(node_type, node_innovation) {
         this.id = id.ID();
         this.node_type = node_type;
-        this.innovation = innovation;
+        this.node_innovation = node_innovation;
     }
 }
 
-module.exports = {NodeGene};
+module.exports = { NodeGene };

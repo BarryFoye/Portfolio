@@ -1,16 +1,16 @@
-class ConnectionGene{
+class ConnectionGene {
     in_node_id;
     out_node_id;
     weight;
     isEnabled;
-    innovation;
-    constructor(in_node, out_node, weight, enabled, innovation){
+    connection_innovation;
+    constructor(in_node, out_node, weight, enabled, connection_innovation) {
         this.in_node_id = in_node;
         this.out_node_id = out_node;
         this.weight = weight;
         this.isEnabled = enabled;
-        this.innovation = innovation;
+        this.connection_innovation = connection_innovation;
     }
 }
 
-module.exports = {ConnectionGene};
+module.exports = { ConnectionGene };
