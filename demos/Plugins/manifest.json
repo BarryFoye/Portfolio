@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "scoks_toggly",
+    "version": "1.0",
+    "description": "Toggles the socks proxy setting to on or default (off)",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistance": false
+    },
+    "icons": {
+        "48": "icons/toggle_icon.svg",
+        "96": "icons/toggle_icon.svg"
+    },
+    "permissions": [
+        "storage",
+        "proxy",
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_icon": "icons/toggle_icon.svg",
+        "default_title": "Toggle SOCKS",
+        "default_popup": "popup/toggle_socks.html"
+    }
+}
