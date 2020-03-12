@@ -46,9 +46,11 @@ function setColour(mode) {
     let colour = "white";
     if (mode === MODE_FIXED_SERVERS) {
         colour = "green";
-        document.getElementById("t_socks").style.backgroundColor = colour;
+        //document.getElementById("t_socks").style.backgroundColor = colour;
+        chrome.browserAction.setBadgeText({ text: 'ON' });
     } else {
         colour = "red";
-        document.getElementById("t_socks").style.backgroundColor = colour;
+        //document.getElementById("t_socks").style.backgroundColor = colour;
+        chrome.browserAction.setBadgeText({ text: '' });
     }
 }

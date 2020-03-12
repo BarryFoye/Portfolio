@@ -10,8 +10,8 @@
         "persistance": false
     },
     "icons": {
-        "48": "icons/toggle_icon.svg",
-        "96": "icons/toggle_icon.svg"
+        "48": "icons/s_tog_2.png",
+        "96": "icons/s_tog_2.png"
     },
     "permissions": [
         "storage",
@@ -19,7 +19,7 @@
         "activeTab"
     ],
     "browser_action": {
-        "default_icon": "icons/toggle_icon.svg",
+        "default_icon": "icons/s_tog_1.png",
         "default_title": "Toggle SOCKS",
         "default_popup": "popup/toggle_socks.html"
     }
